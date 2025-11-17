@@ -1,0 +1,35 @@
+html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>靈魂占卜室</title>
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #1a002e; color: #f5eaff; text-align: center; }
+        header { background: linear-gradient(90deg, #3a0057, #6a0dad); padding: 30px; font-size: 2em; font-weight: bold; color: #fff; }
+        .card { background: rgba(255,255,255,0.1); border-radius: 15px; padding: 20px; margin: 20px auto; max-width: 600px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        button { background-color: #9b4dff; color: white; border: none; padding: 10px 20px; margin-top: 10px; border-radius: 10px; cursor: pointer; }
+        button:hover { background-color: #b366ff; }
+        footer { margin-top: 40px; font-size: 0.9em; color: #d6b3ff; }
+    </style>
+</head>
+<body>
+    <header>🔮 靈魂占卜室 🔮</header>
+    <div class="card">
+        <h2>今日塔羅指引</h2>
+        <p>按下按鈕以抽取你的命運之牌。</p>
+        <button onclick="drawCard()">抽一張牌</button>
+        <p id="result" style="margin-top: 20px; font-size: 1.2em;"></p>
+    </div>
+    <footer>本網站僅供娛樂參考，不構成專業建議。</footer>
+
+    <script>
+        const cards = ["愚者", "魔術師", "女祭司", "女皇", "皇帝", "戀人", "戰車", "力量", "隱者", "命運之輪", "正義", "吊人", "死神", "節制", "惡魔", "塔", "星星", "月亮", "太陽", "審判", "世界"];
+        function drawCard() {
+            const card = cards[Math.floor(Math.random() * cards.length)];
+            const reversed = Math.random() < 0.5 ? "正位" : "逆位";
+            document.getElementById("result").innerText = `你抽到了：${card}（${reversed}）`;
+        }
+    </script>
+</body>
+</html>
+
